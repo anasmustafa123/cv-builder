@@ -1,0 +1,23 @@
+.alignHorizontal {
+  justify-content: space-between;
+}
+.alignVertical {
+  margin: 2rem 0;
+}
+
+.LanguagesHeader {
+  margin: 0 auto;
+}
+
+.button {
+  width: fit-content;
+  padding: 0.5rem 2rem;
+  margin: 0 auto;
+}
+
+.input {
+  width: 100%;
+}
+.label{
+    margin-bottom: -2rem;
+}

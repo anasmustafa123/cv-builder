@@ -1,0 +1,22 @@
+.label{
+    margin-bottom: -2rem;
+}
+
+.alignVertical{
+    margin: 1rem 0;
+}
+.input{
+    width: 100%;
+}
+.btn{
+    max-width: fit-content;
+    padding: 0.3rem 2rem;
+    margin: auto;
+    font-size: 1.3rem;
+}
+.button{
+    margin-top: 1rem;
+}
+.ul{
+    margin-bottom: 3rem;
+}

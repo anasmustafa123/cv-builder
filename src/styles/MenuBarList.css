@@ -1,0 +1,8 @@
+aside.menuBar-items li:hover {
+    transform: scale(1.5);
+    transition: transform 0.3s ease;
+}
+
+li.menuBar-input.selected i{
+    color: rgb(146, 165, 182);
+}

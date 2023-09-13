@@ -1,0 +1,62 @@
+section.header-container{
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(146, 165, 182);
+}
+.labeled-input {
+    width: 100%;
+}
+a.logo {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+h1.header-name{
+    font-size: 3rem;
+}
+.menuBar-items{
+    display: inline-flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 2rem;
+}
+.main-content{
+    display: flex;
+}
+.input-container {
+    margin: auto;
+    padding: 2rem;
+    width: 60%;
+}
+div.align-horizontal {
+    display: flex;
+    width: 100%;
+    gap: 2rem;
+}
+input {
+    padding: 0.6rem;
+    font-size: 1.2rem;
+}
+.align-vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    gap: 2rem;
+}
+.align-vertical.margin-vertical{
+    margin: 2rem 0;
+}
+
+input#image {
+    width: 35%;
+}
+div.centerButton{
+    width: 100%;
+}
+button.remove{
+    background-color: red !important;
+    color: white !important;
+}

@@ -1,0 +1,32 @@
+.alignHorizontal {
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.labeledInput {
+  margin-bottom: 1rem;
+}
+
+.alignVertical {
+  margin-top: 1rem;
+}
+.button {
+  width: fit-content;
+  padding: 0.5rem 2rem;
+  margin: 0 auto;
+}
+.LanguagesHeader {
+  margin: 0 auto;
+}
+
+.input {
+  width: 100%;
+}
+
+.label{
+    text-align: center;
+    display: block;   
+}
+.bulletPoints{
+    max-width: 70%;
+    margin: auto;
+}
