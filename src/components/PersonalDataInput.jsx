@@ -1,4 +1,5 @@
 import MyInput from "./MyInput";
+import style from "../styles/personalDetails.module.css";
 export default function PersonalDataInput({personalDetails, setPersonalDetails}) {
 
   const onInputChange = (e) => {
@@ -8,7 +9,7 @@ export default function PersonalDataInput({personalDetails, setPersonalDetails})
     setPersonalDetails(copyPD);
   };
   return (
-    <form>
+    <form className={style.form}>
       <div className="align-horizontal">
         <MyInput
           onChange={(e) => {

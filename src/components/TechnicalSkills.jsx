@@ -35,7 +35,7 @@ function TechnicalSkills({ technicalSkills, setTechnicalSkills }) {
                     }}
                     type="button"
                   >
-                    <i class="bx bx-left-arrow-alt"></i>
+                    <i className="bx bx-left-arrow-alt"></i>
                   </button>
                 )}
 
@@ -47,7 +47,7 @@ function TechnicalSkills({ technicalSkills, setTechnicalSkills }) {
                     }}
                     type="button"
                   >
-                    <i class="bx bx-right-arrow-alt"></i>
+                    <i className="bx bx-right-arrow-alt"></i>
                   </button>
                 )}
               </div>

@@ -14,7 +14,7 @@ function MenuBarList({ barList, className, callback }) {
   };
   return (
     <ul style={listStyle}>
-      {barList.map((obj, index) => {
+      {barList.map((obj) => {
         let classNames = className;
         if (obj.key === isClicked) {
           classNames += " selected";
@@ -26,11 +26,9 @@ function MenuBarList({ barList, className, callback }) {
             className={classNames}
             onClick={() => {
               if (callback && barList.length > 1) {
-                console.log("list of items")
                 callback(obj.key);
                 setIsClicked(obj.key);
               } else if (barList.length == 1) {
-                console.log('one item')
                 callback(true);
               }
             }}

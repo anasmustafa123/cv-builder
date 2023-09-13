@@ -14,7 +14,7 @@ function Education({ degrees, setDegrees }) {
       "Univercity Name": "",
       Degree: "",
       Graduation: "",
-      School: "",
+      Adress: "",
       notes: [{ content: "" }, { content: "" }, { content: "" }],
     };
     setDegrees(newDegree);
@@ -70,7 +70,7 @@ function Education({ degrees, setDegrees }) {
                     }}
                     type="button"
                   >
-                    <i class="bx bx-left-arrow-alt"></i>
+                    <i className="bx bx-left-arrow-alt"></i>
                   </button>
                 )}
                 {degreeShown < Object.keys(degrees).length - 1 && (
@@ -82,7 +82,7 @@ function Education({ degrees, setDegrees }) {
                       }}
                       type="button"
                     >
-                      <i class="bx bx-right-arrow-alt"></i>
+                      <i className="bx bx-right-arrow-alt"></i>
                     </button>
                   </>
                 )}
@@ -98,7 +98,7 @@ function Education({ degrees, setDegrees }) {
                     type="button"
                     onClick={addDegrees}
                   >
-                    <i class="bx bx-layer-plus"></i>
+                    <i className="bx bx-layer-plus"></i>
                   </button>
                 )}
                 {Object.keys(degrees).length > 1 && (
@@ -109,7 +109,7 @@ function Education({ degrees, setDegrees }) {
                       removeDegree(singleDegree[0]);
                     }}
                   >
-                    <i class="bx bx-layer-minus"></i>
+                    <i className="bx bx-layer-minus"></i>
                   </button>
                 )}
               </div>
@@ -151,9 +151,9 @@ function Education({ degrees, setDegrees }) {
                 onChange={(e) => {
                   changeInputField(e, singleDegree[0]);
                 }}
-                inputName="School"
-                name="School"
-                placeHolder="mit"
+                inputName="Address"
+                name="Address"
+                placeHolder="cairo egypt"
               />
               <MyLabel className={style.label} forId="notes" name="Notes" />
               <div className={style.notes} id="notes">

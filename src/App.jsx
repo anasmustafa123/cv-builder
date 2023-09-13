@@ -35,7 +35,7 @@ function App() {
       "Univercity Name": "",
       Degree: "",
       Graduation: "",
-      School: "",
+      Address: "",
       notes: [{ content: "" }, { content: "" }, { content: "" }],
     },
   });
@@ -73,12 +73,12 @@ function App() {
     "Other technologies": [{ content: "" }, { content: "" }, { content: "" }],
   });
   let userDetails = {
-    technicalSkills: technicalSkills,
-    links: shownLinksList,
-    WorkExperience: workExp,
-    personalDetails: personalDetails,
-    education: degrees,
-    projects: projects,
+    technicalSkills: {content: technicalSkills, id: 1},
+    links: {content: shownLinksList, id: 2},
+    WorkExperience: {content: workExp, id: 3},
+    personalDetails: {content: personalDetails, id: 4},
+    education: {content: degrees, id: 5},
+    projects: {content: projects, id: 6},
   };
 
   let barPreview = [{ key: 1, value: <Eye style={item} /> }];

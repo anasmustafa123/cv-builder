@@ -117,7 +117,7 @@ function Projects({ projects, setProjects }) {
                           addBulletPoints(index);
                         }}
                       >
-                        <i class="bx bxs-message-alt-add"></i>
+                        <i className="bx bxs-message-alt-add"></i>
                       </button>
                     )}
                 </div>
@@ -129,7 +129,7 @@ function Projects({ projects, setProjects }) {
                 type="button"
                 onClick={addProject}
               >
-                <i class="bx bxs-folder-plus"></i>
+                <i className="bx bxs-folder-plus"></i>
               </button>
             )}
           </div>

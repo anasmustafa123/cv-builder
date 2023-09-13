@@ -70,7 +70,7 @@ function WorkExperience({workExp, setWorkExp}) {
                     }}
                     type="button"
                   >
-                    <i class="bx bx-left-arrow-alt"></i>
+                    <i className="bx bx-left-arrow-alt"></i>
                   </button>
                 )}
                 {jopShown < Object.keys(workExp).length - 1 && (
@@ -82,7 +82,7 @@ function WorkExperience({workExp, setWorkExp}) {
                       }}
                       type="button"
                     >
-                      <i class="bx bx-right-arrow-alt"></i>
+                      <i className="bx bx-right-arrow-alt"></i>
                     </button>
                   </>
                 )}
@@ -96,7 +96,7 @@ function WorkExperience({workExp, setWorkExp}) {
                     type="button"
                     onClick={addWorkExp}
                   >
-                    <i class="bx bx-layer-plus"></i>
+                    <i className="bx bx-layer-plus"></i>
                   </button>
                 )}
                 {Object.keys(workExp).length > 1 && (
@@ -107,7 +107,7 @@ function WorkExperience({workExp, setWorkExp}) {
                       removeWorkExp(singleJop[0]);
                     }}
                   >
-                    <i class="bx bx-layer-minus"></i>
+                    <i className="bx bx-layer-minus"></i>
                   </button>
                 )}
               </div>

@@ -8,6 +8,8 @@ export default function MySelect({ selectId, shownLinksList,  setShownLinksList}
     { name: "linkedin", content: "" },
     { name: "github", content: "" },
     { name: "portfolio", content: "" },
+    { name: "facebook", content: "" },
+    { name: "mail", content: "" }
   ]);
   const onMoreLinks = () => {
     setMoreLinks(true);
