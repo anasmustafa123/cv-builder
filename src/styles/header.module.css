@@ -1,0 +1,44 @@
+.header {
+    box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  background: #252525;
+  color: white;
+  padding: 1rem 2rem;
+}
+
+.mainImg {
+  height: 8rem;
+  width: 8rem;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+.mainImg img { 
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.name {
+  font-size: 2rem;
+  letter-spacing: 1.5px;
+}
+.part1 {
+  gap: 1rem;
+}
+.nameContainer {
+  gap: 1.5rem;
+}
+.alignVertical {
+  display: flex;
+  flex-direction: column;
+}
+.headerLinks {
+  gap: 1rem;
+  justify-content: center;
+}
+.alignHorizontal {
+  display: flex;
+  align-items: center;
+}

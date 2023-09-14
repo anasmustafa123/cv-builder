@@ -13,6 +13,7 @@ import Projects from "./components/userInput/Projects";
 import WorkExperience from "./components/userInput/WorkExperience";
 import Education from "./components/userInput/Education";
 import Cv from "./components/Cv";
+import MyButton from "./components/simpleBlocks/MyButton";
 function App() {
   let [viewInput, setViewInput] = useState(1);
   let [showPreview, setShowPreview] = useState(false);
@@ -68,45 +69,103 @@ function App() {
   };
   let [degrees, setDegrees] = useState({
     "degree 1": {
-      "Univercity Name": "",
-      Degree: "",
-      Graduation: "",
-      Address: "",
-      notes: [{ content: "" }, { content: "" }, { content: "" }],
+      "Univercity Name": "alexandria univercity",
+      Degree: "computer and compunication degree",
+      Graduation: "2023-08-05",
+      Address: "alexandria egypt",
+      notes: [
+        { content: "afsd dasf a sdf  das f" },
+        { content: "adsfdsf sdfds fsfd s" },
+        { content: "asdfsdf asdf sfd" },
+      ],
     },
   });
   let [workExp, setWorkExp] = useState({
     "jop 1": {
-      "Company Name": "",
-      "Jop Title": "",
-      from: "",
-      to: "",
-      Address: "",
-      bulletPoints: [{ content: "" }, { content: "" }, { content: "" }],
+      "Company Name": "facebook",
+      "Jop Title": "software engineer",
+      from: "2019-01-01",
+      to: "2022-05-01",
+      Address: "silicon valuey",
+      bulletPoints: [
+        { content: "importantn note must be first" },
+        { content: "less important note comes second" },
+        {
+          content:
+            "importantn note must be first importantn note must be first importantn note must be first",
+        },
+      ],
+    },
+    "jop 2": {
+      "Company Name": "twitter",
+      "Jop Title": "software engineer",
+      from: "2010-01-01",
+      to: "2015-05-01",
+      Address: "silicon valuey",
+      bulletPoints: [
+        { content: "importantn note must be first" },
+        { content: "less important note comes second" },
+        {
+          content:
+            "importantn note must be first importantn note must be first importantn note must be first",
+        },
+      ],
     },
   });
   let [projects, setProjects] = useState([
     {
-      name: "",
-      stack: "",
-      bulletPoints: [{ bpcontent: "" }, { bpcontent: "" }, { bpcontent: "" }],
+      name: "to-do list",
+      stack: "js html css webpack",
+      bulletPoints: [
+        { bpcontent: "sakjldsjf;sdjkfjas" },
+        { bpcontent: "fasg dsaf dasfar wr r gra" },
+        { bpcontent: "sdfaf sdfe  rw faw w" },
+      ],
+    },
+    {
+      name: "battleship game",
+      stack: "js html css webpack jest",
+      bulletPoints: [
+        { bpcontent: "sghjnakjldsjf;sdjkfjas" },
+        { bpcontent: "fasbhg dsaf dasfar wr r gra" },
+        { bpcontent: "sdfaf sdfe  rw faw w" },
+      ],
     },
   ]);
   let [personalDetails, setPersonalDetails] = useState({
-    "First Name": "",
-    "Last Name": "",
+    "First Name": "anas",
+    "Last Name": "mustafa",
     imgUrl: "",
-    "Jop Title": "",
-    Email: "",
-    PhoneNumber: "",
-    Address: "",
+    "Jop Title": "software developer",
+    Email: "anasmuostafa@gmail.com",
+    PhoneNumber: "01206495631",
+    Address: "17-mostafa ebada moharem-bek",
   });
-  let [shownLinksList, setShownLinksList] = useState([]);
+  let [shownLinksList, setShownLinksList] = useState([
+    { name: "linkedin", content: "https://linked.username.ip" },
+    { name: "github", content: "https://github.username.ip" },
+    { name: "portfolio", content: "afsd" },
+    { name: "facebook", content: "fads" },
+    { name: "mail", content: "afdfd" },
+  ]);
   let [technicalSkills, setTechnicalSkills] = useState({
-    Languages: [{ content: "" }, { content: "" }, { content: "" }],
-    FrameWorks: [{ content: "" }, { content: "" }, { content: "" }],
-    "Databases&Libraries": [{ content: "" }, { content: "" }, { content: "" }],
-    "Other technologies": [{ content: "" }, { content: "" }, { content: "" }],
+    Languages: [
+      { content: "java" },
+      { content: "c++" },
+      { content: "javaScript" },
+    ],
+    FrameWorks: [{ content: "react" }, { content: "" }, { content: "" }],
+    "Databases&Libraries": [
+      { content: "mysql" },
+      { content: "sqllite" },
+      { content: "" },
+    ],
+    "Other technologies": [
+      { content: "git" },
+      { content: "webpack" },
+      { content: "linux" },
+      { content: "github" },
+    ],
   });
   let userDetails = {
     technicalSkills: { content: technicalSkills, id: 3 },
@@ -190,7 +249,20 @@ function App() {
           )}
         </div>
       </main>
-      {showPreview  && (<Cv userDetails= {userDetails} shownSections = {shownSections} />)}
+
+      {showPreview && (
+        <div className="previewContainer">
+          <button
+            className="unsee"
+            onClick={() => {
+              setShowPreview(false);
+            }}
+          >
+            <i class="bx bx-hide"></i>
+          </button>
+          <Cv userDetails={userDetails} shownSections={shownSections} />
+        </div>
+      )}
     </>
   );
 }

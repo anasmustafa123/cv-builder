@@ -1,9 +1,17 @@
-.header{
-
+.container {
+  position: relative;
+  overflow-x: hidden;
+  width: 842px !important;
+  height: fit-content !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform: scale(0.8);
+  margin: 0 auto;
 }
-.part1{
-
-}
-.mainImg{
-    
+.mainContent {
+  display: grid;
+  grid-template: 1fr/ 1fr 1fr;
+  padding: 1rem;
+  background-color: white;
 }

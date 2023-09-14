@@ -69,7 +69,7 @@ export default function MySelect({ selectId, shownLinksList,  setShownLinksList}
         </form>
       )}
 
-      <div className="container">
+      <div className={style.container}>
         <div className="dropdown">
           <span>...Add a Link...</span>
           <div className="dropdown-content">

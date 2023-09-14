@@ -147,7 +147,7 @@ function Education({ degrees, setDegrees }) {
               </div>
               <MyInput
                 className={style.labeledInput}
-                content={singleDegree[1]["School"]}
+                content={singleDegree[1]["Address"]}
                 onChange={(e) => {
                   changeInputField(e, singleDegree[0]);
                 }}

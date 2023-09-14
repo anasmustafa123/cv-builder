@@ -1,0 +1,27 @@
+.graduationContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+  gap: 2rem;
+}
+
+.alignHorizontal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.a {
+  font-size: 80%;
+}
+.ul {
+}
+.li {
+  font-size: 1rem;
+  list-style: circle;
+  padding: 0.2rem 0;
+}
+.singleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
