@@ -88,3 +88,21 @@ button.unsee {
   display: inline-flex;
   cursor: pointer;
 }
+label.uploadImg {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+label.uploadImg img{
+  max-width:90px;
+}
+label.uploadImg:hover{
+  background-color: rgb(146, 165, 182);
+}
+input#image{
+  display: none !important;
+}

@@ -23,7 +23,7 @@ export default function MyInput({
   return (
     <>
       {isRequired ? (
-        (type == "file" || !name) ? (
+        (!name) ? (
           <input
             style={inputStyle}
             type={type}
@@ -51,7 +51,7 @@ export default function MyInput({
             />
           </div>
         )
-      ) : (type == "file" || !name) ? (
+      ) : (!name) ? (
         <input
           style={inputStyle}
           type={type}
