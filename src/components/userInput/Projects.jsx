@@ -1,7 +1,7 @@
-import MyInput from "./MyInput";
-import MyButton from "./MyButton";
-import MyLabel from "./MyLabel";
-import style from "../styles/projects.module.css";
+import MyInput from "../simpleBlocks/MyInput";
+import MyButton from "../simpleBlocks/MyButton";
+import MyLabel from "../simpleBlocks/MyLabel";
+import style from "../../styles/projects.module.css";
 
 function Projects({ projects, setProjects }) {
   const addProject = () => {

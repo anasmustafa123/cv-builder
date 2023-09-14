@@ -1,8 +1,8 @@
-import MyInput from "./MyInput";
-import MyButton from "./MyButton";
-import MyLabel from "./MyLabel";
+import MyInput from "../simpleBlocks/MyInput";
+import MyButton from "../simpleBlocks/MyButton";
+import MyLabel from "../simpleBlocks/MyLabel";
 import { useState } from "react";
-import style from "../styles/education.module.css";
+import style from "../../styles/education.module.css";
 
 function Education({ degrees, setDegrees }) {
   let [degreeShown, setDegreeShown] = useState(0);

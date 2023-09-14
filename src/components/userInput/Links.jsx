@@ -1,4 +1,4 @@
-import MySelect from "./MySelect";
+import MySelect from "../simpleBlocks/MySelect";
 export default function Links({ shownLinksList, setShownLinksList }) {
   return (
     <>

@@ -1,4 +1,4 @@
-import "../styles/MenuBarList.css";
+import "../../styles/MenuBarList.css";
 import { useState } from "react";
 function MenuBarList({ barList, className, callback }) {
   let [isClicked, setIsClicked] = useState(1);

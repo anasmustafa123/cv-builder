@@ -1,17 +1,18 @@
 import { useState } from "react";
 import "./App.css";
 import "./styles/MenuBarList.css";
-import MenuBarList from "./components/MenuBarList";
+import MenuBarList from "./components/simpleBlocks/MenuBarList";
 import { ReactComponent as Download } from "./assets/download.svg";
 import { ReactComponent as Eye } from "./assets/eye.svg";
 import { ReactComponent as Trash } from "./assets/trash.svg";
 import { ReactComponent as Logo } from "./assets/logo.svg";
-import PersonalDataInput from "./components/PersonalDataInput";
-import TechnicalSkills from "./components/TechnicalSkills";
-import Links from "./components/Links";
-import Projects from "./components/Projects";
-import WorkExperience from "./components/WorkExperience";
-import Education from "./components/Education";
+import PersonalDataInput from "./components/userInput/PersonalDataInput";
+import TechnicalSkills from "./components/userInput/TechnicalSkills";
+import Links from "./components/userInput/Links";
+import Projects from "./components/userInput/Projects";
+import WorkExperience from "./components/userInput/WorkExperience";
+import Education from "./components/userInput/Education";
+import Cv from "./components/Cv";
 function App() {
   let [viewInput, setViewInput] = useState(1);
   let [showPreview, setShowPreview] = useState(false);
@@ -29,7 +30,42 @@ function App() {
     { key: 5, value: <i class="bx bxs-folder-plus"></i> },
     { key: 6, value: <i class="bx bxs-school"></i> },
   ];
+  /* state to check if this section is not empty or not to show it in the cv */
+  let [shownSections, setShownSections] = useState({
+    1: false,
+    2: false,
+    1: false,
+    3: false,
+    4: false,
+    5: false,
+    6: false,
+  });
 
+  const updateContentShown = () => {
+    let copy = { ...shownSections };
+    Object.values(userDetails).forEach((value) => {
+      let key = value["id"];
+      copy[key] = !isSectionEmpty(value["content"]);
+    });
+    console.log(copy);
+    setShownSections(copy);
+  };
+  /* recursivly check if section is empty */
+  let isSectionEmpty = (cont) => {
+    if (Array.isArray(cont)) {
+      return cont.reduce((a, b) => {
+        return a && isSectionEmpty(b);
+      }, true);
+    } else if (typeof cont === "object") {
+      return Object.values(cont).reduce((a, b) => {
+        return a && isSectionEmpty(b);
+      }, true);
+    } else if (typeof cont === "string") {
+      return cont.length === 0;
+    } else {
+      return false;
+    }
+  };
   let [degrees, setDegrees] = useState({
     "degree 1": {
       "Univercity Name": "",
@@ -73,12 +109,12 @@ function App() {
     "Other technologies": [{ content: "" }, { content: "" }, { content: "" }],
   });
   let userDetails = {
-    technicalSkills: {content: technicalSkills, id: 1},
-    links: {content: shownLinksList, id: 2},
-    WorkExperience: {content: workExp, id: 3},
-    personalDetails: {content: personalDetails, id: 4},
-    education: {content: degrees, id: 5},
-    projects: {content: projects, id: 6},
+    technicalSkills: { content: technicalSkills, id: 3 },
+    links: { content: shownLinksList, id: 2 },
+    WorkExperience: { content: workExp, id: 4 },
+    personalDetails: { content: personalDetails, id: 1 },
+    education: { content: degrees, id: 6 },
+    projects: { content: projects, id: 5 },
   };
 
   let barPreview = [{ key: 1, value: <Eye style={item} /> }];
@@ -108,7 +144,10 @@ function App() {
           <MenuBarList
             barList={barPreview}
             className="menuBar-preview"
-            callback={setShowPreview}
+            callback={() => {
+              setShowPreview(true);
+              updateContentShown();
+            }}
           />
           <MenuBarList
             barList={barDownload}
@@ -151,6 +190,7 @@ function App() {
           )}
         </div>
       </main>
+      {showPreview  && (<Cv userDetails= {userDetails} shownSections = {shownSections} />)}
     </>
   );
 }

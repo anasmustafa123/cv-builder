@@ -1,8 +1,8 @@
-import MyInput from "./MyInput";
-import MyButton from "./MyButton";
-import MyLabel from "./MyLabel";
+import MyInput from "../simpleBlocks/MyInput";
+import MyButton from "../simpleBlocks/MyButton";
+import MyLabel from "../simpleBlocks/MyLabel";
 import { useState } from "react";
-import style from "../styles/workExp.module.css";
+import style from "../../styles/workExp.module.css";
 function WorkExperience({workExp, setWorkExp}) {
   let [jopShown, setTaskShown] = useState(0);
   const addWorkExp = () => {

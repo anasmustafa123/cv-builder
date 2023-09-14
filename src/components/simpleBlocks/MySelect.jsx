@@ -1,7 +1,7 @@
 import { useState } from "react";
 import MyInput from "./MyInput";
-import "../styles/mydropdown.css";
-import style from "../styles/links.module.css";
+import "../../styles/mydropdown.css";
+import style from "../../styles/links.module.css";
 export default function MySelect({ selectId, shownLinksList,  setShownLinksList}) {
   const [moreLinks, setMoreLinks] = useState(false);
   let [linksList, setLinksList] = useState([

@@ -1,7 +1,7 @@
-import MyInput from "./MyInput";
-import MyButton from "./MyButton";
+import MyInput from "../simpleBlocks/MyInput"; 
+import MyButton from "../simpleBlocks/MyButton";
 import { useState } from "react";
-import style from "../styles/ts.module.css";
+import style from "../../styles/ts.module.css";
 function TechnicalSkills({ technicalSkills, setTechnicalSkills }) {
   let [taskShown, setTaskShown] = useState(0);
   const addInputField = (skillName) => {

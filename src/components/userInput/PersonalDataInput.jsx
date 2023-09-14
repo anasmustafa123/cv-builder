@@ -1,21 +1,29 @@
-import MyInput from "./MyInput";
-import style from "../styles/personalDetails.module.css";
-export default function PersonalDataInput({personalDetails, setPersonalDetails}) {
-
+import MyInput from "../simpleBlocks/MyInput";
+import style from "../../styles/personalDetails.module.css";
+export default function PersonalDataInput({
+  personalDetails,
+  setPersonalDetails,
+}) {
   const onInputChange = (e) => {
     let { name, value } = e.target;
     let copyPD = { ...personalDetails };
     copyPD[name] = value;
     setPersonalDetails(copyPD);
   };
+  const onImageChange = (e) => {
+    let { name, files } = e.target;
+    let copyPD = { ...personalDetails };
+    copyPD[name] = URL.createObjectURL(e.target.files[0]);
+    setPersonalDetails(copyPD);
+  }
   return (
     <form className={style.form}>
       <div className="align-horizontal">
         <MyInput
           onChange={(e) => {
-            onInputChange(e);
+            onImageChange(e);
           }}
-          content={personalDetails.imgUrl}
+          /* content={personalDetails.imgUrl} */
           inputName="imgUrl"
           type="file"
           className="image"
