@@ -106,3 +106,11 @@ label.uploadImg:hover{
 input#image{
   display: none !important;
 }
+.addWorkExp, .removeWorkExp{
+  max-width: 50px;
+}
+@media(max-width: 950px){
+  div.align-horizontal {
+    flex-direction: column;
+  }
+}

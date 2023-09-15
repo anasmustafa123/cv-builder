@@ -1,7 +1,6 @@
 .skillContainer {
   display: flex;
   flex-direction: column;
-  justify-self: center;
   gap: 1rem;
 }
 .section {

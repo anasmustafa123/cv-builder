@@ -15,21 +15,21 @@ export default function Cv({ userDetails, shownSections }) {
         <Myheader personalDetails={userDetails["personalDetails"]["content"]} />
       )}
       {shownSections["2"] && (
-        <Contact shownLinksList={userDetails["links"]["content"]} />
+        <Contact  shownLinksList={userDetails["links"]["content"]} />
       )}
 
       <div className={style.mainContent}>
         {shownSections["4"] && (
-          <Experience workExp={userDetails["WorkExperience"]["content"]} />
+          <Experience imgIndex = "4" headerName = "Work Experience" workExp={userDetails["WorkExperience"]["content"]} />
         )}
         {shownSections["3"] && (
-          <Skills technicalSkills={userDetails["technicalSkills"]["content"]} />
+          <Skills imgIndex = "3" headerName = "Technical Skill" technicalSkills={userDetails["technicalSkills"]["content"]} />
         )}
         {shownSections["5"] && (
-          <ProjectsSection projects={userDetails["projects"]["content"]} />
+          <ProjectsSection imgIndex = "5" headerName = "Projects" projects={userDetails["projects"]["content"]} />
         )}
         {shownSections["6"] && (
-          <Graduation degrees={userDetails["education"]["content"]} />
+          <Graduation imgIndex = "6"  headerName = "Education" degrees={userDetails["education"]["content"]} />
         )}
       </div>
     </section>

@@ -204,14 +204,18 @@ function App() {
             barList={barPreview}
             className="menuBar-preview"
             callback={() => {
-              setShowPreview(true);
               updateContentShown();
+              setShowPreview(true);
             }}
           />
           <MenuBarList
             barList={barDownload}
             className="menuBar-download"
-            callback={setShowDownload}
+            callback={(e) => {
+              updateContentShown();
+              e.target
+              setShowDownload();
+            }}
           />
           <MenuBarList
             barList={barClear}
@@ -260,7 +264,7 @@ function App() {
           >
             <i class="bx bx-hide"></i>
           </button>
-          <Cv userDetails={userDetails} shownSections={shownSections} />
+          <Cv  userDetails={userDetails} shownSections={shownSections} />
         </div>
       )}
     </>

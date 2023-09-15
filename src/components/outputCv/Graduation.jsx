@@ -1,7 +1,10 @@
 import style from "../../styles/graduation.module.css";
-export default function Graduation({ degrees }) {
+import CoolHeader from "../simpleBlocks/CoolHeader";
+
+export default function Graduation({ degrees, headerName, imgIndex }) {
   return (
     <div className={style.graduationContainer}>
+      <CoolHeader imgIndex={imgIndex} headerName={headerName} />
       {Object.values(degrees).map((singleGrad, iindex) => (
         <div key={iindex} className={style.singleContainer}>
           <div className={style.alignHorizontal}>

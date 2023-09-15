@@ -1,7 +1,9 @@
 import style from "../../styles/projectsSection.module.css";
-export default function ProjectsSection({ projects }) {
+import CoolHeader from "../simpleBlocks/CoolHeader";
+export default function ProjectsSection({ projects, headerName, imgIndex }) {
   return (
     <div className={style.projectsContainer}>
+      <CoolHeader imgIndex={imgIndex} headerName={headerName} />
       {projects.map((singleProject, iindex) => (
         <div key={iindex} className="projectContainer">
           <div className={style.alignHorizontal}>
