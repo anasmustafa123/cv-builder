@@ -1,27 +1,22 @@
-.graduationContainer {
+.sectionContainer {
   display: flex;
   flex-direction: column;
-  padding: 0 1rem;
-  gap: 2rem;
+  gap: 1rem;
 }
-
 .alignHorizontal {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-.a {
-  font-size: 80%;
-}
-.ul {
 }
 .li {
   font-size: 1rem;
   list-style: circle;
   padding: 0.2rem 0;
 }
-.singleContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+.sectionHeader {
+  font-size: 1.4rem;
+  font-weight: 600;
 }
+.rightSection {
+    padding-left: 1rem;
+  }
