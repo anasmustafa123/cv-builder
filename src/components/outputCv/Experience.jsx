@@ -4,7 +4,6 @@ export default function Experience({ workExp, headerName, imgIndex }) {
   return (
     <div className={style.experienceContainer}>
       <CoolHeader imgIndex={imgIndex} headerName={headerName} />
-      <h1 className="mainHeader">{headerName}</h1>
       {Object.values(workExp).map((singleExp, iindex) => (
         <div key={iindex} className={style.singleContainer}>
           <div className={style.alignHorizontal}>

@@ -8,6 +8,8 @@ function Projects({ projects, setProjects }) {
     setProjects([
       ...projects,
       {
+        name: "",
+        stack: "",
         content: "",
         bulletPoints: [{ bpcontent: "" }, { bpcontent: "" }, { bpcontent: "" }],
       },
@@ -44,8 +46,8 @@ function Projects({ projects, setProjects }) {
   return (
     <>
       {projects.map((singleProject, index) => (
-        <ul className={style.ul}>
-          <div key={index} className="align-vertical">
+        <ul key={index} className={style.ul}>
+          <div className="align-vertical">
             <div className="align-horizontal">
               <div className="align-horizontal">
                 <MyInput

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "./App.css";
 import "./styles/MenuBarList.css";
 import MenuBarList from "./components/simpleBlocks/MenuBarList";
@@ -13,8 +13,8 @@ import Projects from "./components/userInput/Projects";
 import WorkExperience from "./components/userInput/WorkExperience";
 import Education from "./components/userInput/Education";
 import Cv from "./components/Cv";
-import MyButton from "./components/simpleBlocks/MyButton";
 function App() {
+  const ref = useRef(null);
   let [viewInput, setViewInput] = useState(1);
   let [showPreview, setShowPreview] = useState(false);
   let [showDownload, setShowDownload] = useState(false);
@@ -23,6 +23,14 @@ function App() {
     width: "35px",
     height: "35px",
   };
+  /*   const call = (elm)=> {
+    console.log(html2pdf)
+    if (elm) {
+      html2pdf()
+        .from(elm)
+        .save("cv.pdf");
+    }
+  } */
   let barInputList = [
     { key: 1, value: <i class="bx bxs-user"></i> },
     { key: 2, value: <i class="bx bx-link"></i> },
@@ -135,7 +143,7 @@ function App() {
   let [personalDetails, setPersonalDetails] = useState({
     "First Name": "anas",
     "Last Name": "mustafa",
-    imgUrl: "",
+    imgUrl: "/src/assets/uploadImg.png",
     "Jop Title": "software developer",
     Email: "anasmuostafa@gmail.com",
     PhoneNumber: "01206495631",
@@ -213,8 +221,12 @@ function App() {
             className="menuBar-download"
             callback={(e) => {
               updateContentShown();
-              e.target
-              setShowDownload();
+              setShowDownload(true);
+              /* let elm = document.getElementById("cv"); */
+              /* let elm = ref.current; */
+              /* console.log(elm); */
+              ref.current.downloadCvAsPdf();
+              /*              call(elm) */
             }}
           />
           <MenuBarList
@@ -264,8 +276,11 @@ function App() {
           >
             <i class="bx bx-hide"></i>
           </button>
-          <Cv  userDetails={userDetails} shownSections={shownSections} />
+          <Cv userDetails={userDetails} shownSections={shownSections} />
         </div>
+      )}
+      {showDownload && (
+        <Cv ref={ref} userDetails={userDetails} shownSections={shownSections} />
       )}
     </>
   );

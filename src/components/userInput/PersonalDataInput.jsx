@@ -1,12 +1,9 @@
 import MyInput from "../simpleBlocks/MyInput";
 import style from "../../styles/personalDetails.module.css";
-import uploadImg from "../../assets/uploadImg.png";
-import { useState } from "react";
 export default function PersonalDataInput({
   personalDetails,
   setPersonalDetails,
 }) {
-  let [loadImage, setLoadImage] = useState(uploadImg);
   const onInputChange = (e) => {
     let { name, value } = e.target;
     let copyPD = { ...personalDetails };
@@ -17,19 +14,17 @@ export default function PersonalDataInput({
     let { name, files } = e.target;
     let copyPD = { ...personalDetails };
     copyPD[name] = URL.createObjectURL(e.target.files[0]);
-    setLoadImage(URL.createObjectURL(e.target.files[0]))
     setPersonalDetails(copyPD);
   };
   return (
     <form className={style.form}>
       <div className=" align-horizontal">
         <label className="uploadImg" htmlFor="image">
-          <img src={loadImage} alt="" />
+          <img src={personalDetails["imgUrl"]} alt="" />
         </label>
         <MyInput
           onChange={(e) => {
             onImageChange(e);
-            updateInputImg(e);
           }}
           inputName="imgUrl"
           type="file"
