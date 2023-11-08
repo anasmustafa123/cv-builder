@@ -17,7 +17,6 @@ function App() {
   const ref = useRef(null);
   let [viewInput, setViewInput] = useState(1);
   let [showPreview, setShowPreview] = useState(false);
-  let [showDownload, setShowDownload] = useState(false);
   let [clearInput, setClearInput] = useState(false);
   const item = {
     width: "35px",
@@ -185,7 +184,6 @@ function App() {
   };
 
   let barPreview = [{ key: 1, value: <Eye style={item} /> }];
-  let barDownload = [{ key: 1, value: <Download style={item} /> }];
   let barClear = [{ key: 1, value: <Trash style={item} /> }];
 
   return (
@@ -214,19 +212,6 @@ function App() {
             callback={() => {
               updateContentShown();
               setShowPreview(true);
-            }}
-          />
-          <MenuBarList
-            barList={barDownload}
-            className="menuBar-download"
-            callback={(e) => {
-              updateContentShown();
-              setShowDownload(true);
-              /* let elm = document.getElementById("cv"); */
-              /* let elm = ref.current; */
-              /* console.log(elm); */
-              ref.current.downloadCvAsPdf();
-              /*              call(elm) */
             }}
           />
           <MenuBarList
@@ -278,9 +263,6 @@ function App() {
           </button>
           <Cv userDetails={userDetails} shownSections={shownSections} />
         </div>
-      )}
-      {showDownload && (
-        <Cv ref={ref} userDetails={userDetails} shownSections={shownSections} />
       )}
     </>
   );
